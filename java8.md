@@ -19,6 +19,7 @@ Java 8 변경점
     }).start();
 </code></pre>
 + **함수형 인터페이스 예제**
+'''
 	public class Test {
 		@FunctionalInterface
 		interface Calc { // 함수형 인터페이스의 선언
@@ -30,5 +31,6 @@ Java 8 변경점
 			System.out.println(test.min(4, 6));
 			}
 		}
+'''
 > 어노테이션 안에 두개 이상의 메소드가 선언 될 경우 오류가 발생한다.
 
