@@ -9,4 +9,5 @@ Redis 사용법!!!
 
 2. 압축을 풀어주고 나면 redis-cli, redis-server exe파일이 있다. redis-server를 실행하자!
 
-3. ![redis_server](./img/redis_server.PNG)
+3. 요렇게 나오면 성공!
+![redis_server](./img/redis_server.PNG)
