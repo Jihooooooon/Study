@@ -7,18 +7,14 @@ Java 8 변경점
 
 + **예제**
 > 기존 코드
-    <pre><code>new Thread(new Runnable() {
-
+<pre><code>new Thread(new Runnable() {
     public void run() {
-
         System.out.println("전통적인 방식의 일회용 스레드 생성");
-
-    }
-
-    }).start();</code></pre>
+        }
+    }).start();
+    </code></pre>
 > 람다식
-    <pre><code>new Thread(()->{
-
+<pre><code>new Thread(()->{
       System.out.println("람다 표현식을 사용한 일회용 스레드 생성");
-  
-    }).start();</code></pre>
+    }).start();
+</code></pre>
