@@ -48,7 +48,7 @@ xml 설정 방법
   id: 빈의 이름을 나타낸다
   class : 빈으로 등록할 클래스를 나타낸다
   <property>
-    프로퍼티의 경우 bean 에 주입할 setter를 나타낸ㄴ다
+    프로퍼티의 경우 bean 에 주입할 setter를 나타낸다
     name: class에 사용할 setter 이름
     ref : setter에 주입할 bean의 이름
     value : 주입할 인자
