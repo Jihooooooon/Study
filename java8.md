@@ -41,13 +41,8 @@ public class Test {
 + **스트림 예제**
 ~~~
 public class Test {
-
-
-	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	
-	
+		// TODO Auto-generated method stub	
 	int[] arr = new int[] {1,2,3,4};
 	IntStream stream = Arrays.stream(arr,1,3);
 	stream.forEach(s->System.out.println(s));
