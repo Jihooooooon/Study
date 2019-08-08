@@ -15,10 +15,10 @@ Java 8 변경점
 
     }
 
-  }).start();
+    }).start();
 > 람다식
   new Thread(()->{
 
       System.out.println("람다 표현식을 사용한 일회용 스레드 생성");
   
-  }).start();
+    }).start();
