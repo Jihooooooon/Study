@@ -18,3 +18,22 @@ Java 8 변경점
       System.out.println("람다 표현식을 사용한 일회용 스레드 생성");
     }).start();
 </code></pre>
++ **함수형 인터페이스 예제**
+<pre><code>
+public class Test {
+
+	@FunctionalInterface
+	interface Calc { // 함수형 인터페이스의 선언
+
+	    public int min(int x, int y);
+
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	Calc test = (x,y)->x<y?x:y;
+	System.out.println(test.min(4, 6));
+	}
+
+}
+</code></pre>
