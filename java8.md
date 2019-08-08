@@ -31,7 +31,7 @@ public class Test {
 		Calc test = (x,y)->x<y?x:y;
 		System.out.println(test.min(4, 6));
 		}
-}
+	}
 ~~~
 > 어노테이션 안에 두개 이상의 메소드가 선언 될 경우 오류가 발생한다.
 
