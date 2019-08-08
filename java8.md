@@ -20,17 +20,17 @@ Java 8 변경점
 </code></pre>
 + **함수형 인터페이스 예제**
 '''
-	public class Test {
-		@FunctionalInterface
-		interface Calc { // 함수형 인터페이스의 선언
-	    	public int min(int x, int y);
-		}	
-		public static void main(String[] args) {
-			// TODO Auto-generated method stub
-			Calc test = (x,y)->x<y?x:y;
-			System.out.println(test.min(4, 6));
-			}
+public class Test {
+	@FunctionalInterface
+	interface Calc { // 함수형 인터페이스의 선언
+	public int min(int x, int y);
+	}	
+	public static void main(String[] args) {
+	// TODO Auto-generated method stub
+		Calc test = (x,y)->x<y?x:y;
+		System.out.println(test.min(4, 6));
 		}
+	}
 '''
 > 어노테이션 안에 두개 이상의 메소드가 선언 될 경우 오류가 발생한다.
 
