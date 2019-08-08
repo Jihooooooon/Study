@@ -7,7 +7,7 @@ Java 8 변경점
 
 + **예제**
 > 기존 코드
-    new Thread(new Runnable() {
+    <pre><code>new Thread(new Runnable() {
 
     public void run() {
 
@@ -15,10 +15,10 @@ Java 8 변경점
 
     }
 
-    }).start();
+    }).start();</code></pre>
 > 람다식
-    new Thread(()->{
+    <pre><code>new Thread(()->{
 
       System.out.println("람다 표현식을 사용한 일회용 스레드 생성");
   
-    }).start();
+    }).start();</code></pre>
