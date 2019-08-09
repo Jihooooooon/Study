@@ -19,7 +19,7 @@ xml 설정 방법
  + web.xml
  + root-context.xml
  + servlet-content.xml
- 
+ ------------------------------------------------
  + web.xml 
      * 서버가 처음 구동될 때 설정 정보가 담겨져 있다. filter나 welecom-file 인코딩 정보, 어떤 root-context,servlet.xml
  파일을 참조할 건지 url-pattern , dispatcherservlet 설정 등의 정보가 있다.
