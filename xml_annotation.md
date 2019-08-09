@@ -61,33 +61,33 @@ xml 설정 방법
  ----------------------------------
  
 + @ComponentScan
- - @Component @Service, @Configuration, @Controller, @Repository 이 붙은 클래스 Bean을 찾아서 Context에 등록해주는 annotation
+    - @Component @Service, @Configuration, @Controller, @Repository 이 붙은 클래스 Bean을 찾아서 Context에 등록해주는 annotation
  
 + @EnableAutoConfiguration
- - 스프링 context를 만들때 classpath 내용에 기반해서 자동으로 설정하는 기능(만약 tomcat-embed-core.jar이 있다면 톰캣서버가 셋팅)
+    - 스프링 context를 만들때 classpath 내용에 기반해서 자동으로 설정하는 기능(만약 tomcat-embed-core.jar이 있다면 톰캣서버가 셋팅)
  
 + @Required
- - setter에 적용하면 빈 생성시 필수 프로퍼티임을 알린다
+    - setter에 적용하면 빈 생성시 필수 프로퍼티임을 알린다
  
 + @Resource
- - 이름으로 빈 객체를 주입
+    - 이름으로 빈 객체를 주입
  
 + @Autowired
- - 타입으로 빈 객체를 주입
+    - 타입으로 빈 객체를 주입
  
 + @ConfigurationProperties
- - default로 classpath:application.properties파일이 조회된다
+    - default로 classpath:application.properties파일이 조회된다
  
 + @Value
- - properties에서 값을 가져와 적용할 때 사용 (@Value("${value.from.file}"))
+    - properties에서 값을 가져와 적용할 때 사용 (@Value("${value.from.file}"))
  
 + @SpringBootApplication
- - @Configuration, @EnableAutoConfiguration, @ComponentScan 3가지를 하나로 합친 것
+    - @Configuration, @EnableAutoConfiguration, @ComponentScan 3가지를 하나로 합친 것
  
 + @RequestMapping
- - 요청 URL을 어떤 메소드가 매핑할것인지 알려주는 annotation
+    - 요청 URL을 어떤 메소드가 매핑할것인지 알려주는 annotation
  
 + @CookieValue
- - 쿠키 값을 파라미터로 전달 받을 수 있는 방법 (ex: public String view(@CookieValue(value="auth")String auth))
+    - 쿠키 값을 파라미터로 전달 받을 수 있는 방법 (ex: public String view(@CookieValue(value="auth")String auth))
  
  
