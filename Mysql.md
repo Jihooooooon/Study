@@ -12,7 +12,7 @@ mysql 기본 쿼리문 정리
 
 + 데이터베이스 생성
     - create database 이름
-    -CREATE TABLE dept (
+    - CREATE TABLE dept (
   dept_no INT(11) unsigned NOT NULL,
   dept_name VARCHAR(32) NOT NULL,
   PRIMARY KEY (dept_no)
