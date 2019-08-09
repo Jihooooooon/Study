@@ -90,7 +90,7 @@ xml 설정 방법
     - 쿠키 값을 파라미터로 전달 받을 수 있는 방법 (ex: public String view(@CookieValue(value="auth")String auth))
  
 + @ModelAttribute
-    - view에서 전달해주는 파라밑를 클래스의 멤버 변수로 바인딩 해주는 annotation
+    - view에서 전달해주는 파라미터를 클래스의 멤버 변수로 바인딩 해주는 annotation
     
 + @SessionAttribute
     - @SessionAttribute("name")이라고 한다면 Model에 key값이 "name"으로 있는 값은 자동으로 session에 저장된다
