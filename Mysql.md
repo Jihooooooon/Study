@@ -49,3 +49,13 @@ mysql 기본 쿼리문 정리
     - select * from table limit n,m; n번째 부터 m개 가져옴
     - select count(*) from table
     
++ 추가
+    - insert 테이블(a,b) value(c,d);
+    - insert 테이블 value(c,d);
+    - insert 테이블() value(password()); 단방향 암호화
+    
++ 삭제
+    - delete from 테이블 where
+
++ 수정
+    - update 테이블 set 필드=내용, 필드= 내용 where 
