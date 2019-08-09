@@ -89,4 +89,15 @@ xml 설정 방법
 + @CookieValue
     - 쿠키 값을 파라미터로 전달 받을 수 있는 방법 (ex: public String view(@CookieValue(value="auth")String auth))
  
++ @ModelAttribute
+    - view에서 전달해주는 파라밑를 클래스의 멤버 변수로 바인딩 해주는 annotation
+    
++ @SessionAttribute
+    - @SessionAttribute("name")이라고 한다면 Model에 key값이 "name"으로 있는 값은 자동으로 session에 저장된다
+    
++ @Transactional
+    -  메서드 내부에 있는 트랜잭션을 롤백할 수 있게 해주는 annotation(@Transactional(readOnly=true,rollbackFor=Exception.class), timeout, noRollBackFor)
+    
++ @Cacheable
+    - 메서드 최초 호출에서는 캐쉬에 저장하고 두번째 호출 부터는 캐쉬의 값으 ㄹ반환 
  
