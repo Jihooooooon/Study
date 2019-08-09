@@ -20,22 +20,22 @@ xml 설정 방법
  + root-context.xml
  + servlet-content.xml
  
- > web.xml 
- 서버가 처음 구동될 때 설정 정보가 담겨져 있다. filter나 welecom-file 인코딩 정보, 어떤 root-context,servlet.xml
+ + web.xml 
+     * 서버가 처음 구동될 때 설정 정보가 담겨져 있다. filter나 welecom-file 인코딩 정보, 어떤 root-context,servlet.xml
  파일을 참조할 건지 url-pattern , dispatcherservlet 설정 등의 정보가 있다.
  
- >root-context.xml
- 뷰를 제외한 공통빈을 설정한다. db나 log 등을 설정한다.
+ + root-context.xml
+     * 뷰를 제외한 공통빈을 설정한다. db나 log 등을 설정한다.
  
- >servlet-context.xml
- 서블릿에 관련된 설정을 한다. <annotation-driven/> 어노테이션을 사용할 건지
+ + servlet-context.xml
+     * 서블릿에 관련된 설정을 한다. <annotation-driven/> 어노테이션을 사용할 건지
  정적 리소스 매핑 <resource mapping="/resources/**/" location="/resources/">
  viewresolver로 jsp와 name 매핑
  <context:componext-scan base-package=""/> 베이스 패키지 하위의 모든 어노테이션을 스캔해서 빈으로 등록
  하는 등의 설정 정보가 있다.
  
- >pom.xml
- maven으로 라이브러리를 자동으로 다운받을수 있게 해주는 xml이다. <dependency></dependency>를 통해 필요한 라이브러리와 
+ + pom.xml
+     * maven으로 라이브러리를 자동으로 다운받을수 있게 해주는 xml이다. <dependency></dependency>를 통해 필요한 라이브러리와 
  사용 스프링 버전, 자바 등을 설정할 수 있다.
  
  xml bean 설정
