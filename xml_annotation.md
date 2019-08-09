@@ -69,7 +69,7 @@ xml 설정 방법
     - setter에 적용하면 빈 생성시 필수 프로퍼티임을 알린다
  
 + @Resource
-    - 이름으로 빈 객체를 주입
+    - 이름으로 빈 객체를 주입( @Resource(name="redisTemplate") private ListOperations<String, String> listOps;)
  
 + @Autowired
     - 타입으로 빈 객체를 주입
