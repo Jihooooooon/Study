@@ -64,3 +64,22 @@
 
 
 ~~~
+
+~~~
+public class Client {
+	public static void main(String[] args) {
+		Cat normalCat = new NormalCat("야옹이");
+		Cat superCat = new SuperCat("슈퍼야옹이");
+		
+		System.out.println("My name is "+normalCat.getName());
+		normalCat.move();
+		normalCat.attack();
+		
+		System.out.println();
+		System.out.println("My name is "+superCat.getName());
+		superCat.move();
+		superCat.attack();
+		
+	}
+}
+~~~
