@@ -24,10 +24,6 @@
  ![고양이 만들기](../img/cat.PNG)
  
  '''
- 
-public class Cat2 {
-
-	
 	public abstract class Cat{
 		private String name;
 		public Cat(String name) {
@@ -64,7 +60,7 @@ public class Cat2 {
 		public  void move() {
 			System.out.println("슈퍼 뛰기");
 		}
-	}
-}
+	} 
+
 
  '''
