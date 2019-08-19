@@ -9,4 +9,16 @@
   ![strategy ex](../img/strategy.PNG)
   
   
+* Strategy
+  - 인터페이스나 추상 클래스로 외부에서 동일한 방식으로 객체를 호출하는 방법을 명시
+* ConcreteStrategy
+  - Strategy에서 명시한 기능들을 실제로 구현한 클래스
+* Context
+  - 스트래티지 패턴을 이용하는 역할을 수행
+  - 상황에 따라 구체적인 전략을 바꿀수 있도록 setter메소드를 제공
   
+  
+
+예시
+--------------------------------------
+ ![고양이 만들기](../img/strategy.PNG)
