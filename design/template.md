@@ -55,4 +55,10 @@
 			}
 		}
 ~~~
+users 외에 users2, users3 라는 테이블이 있고 마찬가지로 삭제를 할려고 코드를 작성해보면  ps = c.prepareStatement("delete from users");
+한 줄 외에는 다 공통적으로 코드가 같게 된다.
 
+따라서 똑같은 코드를 3번 치는 것은 상당히 비효율적이므로 공통적인 부분을 abstractClass 에 선언하고
+
+
+다른 부분만 concreteClass에 선언을 한다.
