@@ -128,5 +128,5 @@ public class UserDaoDeleteAll extends UserDao{
 * 콜백 인터페이스의 메소드에는 보통 파라미터가 있다.
 	- 이 파리미터는 템플릿의 작업 흐름 중에 만들어지는 컨텍스트 정보를 전달받을 때 사용된다.
 	
-	
+![template_callback_flow](../img/template_call_flow.JPG)	
 
