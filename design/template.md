@@ -8,3 +8,7 @@
 ![templte](../img/template.PNG)
   
   
+* 역할이 수행하는 작업
+  - AbstractClass
+    + 템플릿 메서드를 정의하는 클래스
+    + 공통적인 기능들을 기술하고 하위 클래스에서 구현될 기능을 primitive 메서드 또는 hook 메서드로 정의하는 
