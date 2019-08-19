@@ -55,10 +55,40 @@
 			}
 		}
 ~~~
-users 외에 users2, users3 라는 테이블이 있고 마찬가지로 삭제를 할려고 코드를 작성해보면  ps = c.prepareStatement("delete from users");
+삭제 뿐만 아니라 다른 CRUD 할려고 코드를 작성해보면  ps = c.prepareStatement("delete from users");
 한 줄 외에는 다 공통적으로 코드가 같게 된다.
 
-따라서 똑같은 코드를 3번 치는 것은 상당히 비효율적이므로 공통적인 부분을 abstractClass 에 선언하고
+따라서 똑같은 코드를 중복해서 치는 것은 상당히 비효율적이므로 공통적인 부분을 abstractClass 에 선언하고
+~~~
+	public abstract class UserDao {
 
+	public void deleteAll() throws SQLException {
+		...
+		try {
+			c = dataSource.getConnection();
+			
+			ps = makeStatement(c);
+			
+			ps.executeUpdate();
+			
+		}
+		...
+	}
 
-다른 부분만 concreteClass에 선언을 한다.
+	public abstract PreparedStatement makeStatement(Connection c) throws SQLException();
+	
+	}
+
+~~~
+다른 부분만 상속을 통해 concreteClass에 선언을 한다.
+
+~~~
+public class UserDaoDeleteAll extends UserDao{
+	
+	public PreparedStatement makeStatement(Connection c) {
+		PreparedStatement ps = c.prepareStatement("delete from users");
+		return ps;
+		
+		}
+}
+~~~
