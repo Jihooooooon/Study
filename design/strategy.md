@@ -22,3 +22,49 @@
 예시
 --------------------------------------
  ![고양이 만들기](../img/cat.PNG)
+ 
+ '''
+ 
+public class Cat2 {
+
+	
+	public abstract class Cat{
+		private String name;
+		public Cat(String name) {
+			this.name=name;
+		}
+		
+		public String getName() {
+			return name;
+		}
+		
+		public abstract void attack();
+		public abstract void move();
+	}
+	
+	public class NormalCat extends Cat{
+		public NormalCat(String name) {
+			super(name);
+		}
+		public  void attack() {
+			System.out.println("보통 냥냥펀치");
+		}
+		public  void move() {
+			System.out.println("보통 뛰기");
+		}
+	}
+	
+	public class SuperCat extends Cat{
+		public SuperCat(String name) {
+			super(name);
+		}
+		public  void attack() {
+			System.out.println("슈퍼 냥냥펀치");
+		}
+		public  void move() {
+			System.out.println("슈퍼 뛰기");
+		}
+	}
+}
+
+ '''
