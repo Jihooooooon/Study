@@ -56,6 +56,62 @@ public class Printer {
 ~~~
 
 
+문제점
+------------------------------
+다중 스레드 환경에서는 인스턴스가 한개 이상 생성되는 경우가 발생할 수 있다.
+
+* race condition이 발생하는 경우
+ - thread1이 getInstance 함수를 호출해 instance가 null인것을 확인하고 스케쥴링에 의해서 제어권이 thread2로 넘어간다.
+ - thread2에서 getInstance 함수를 호출해 마찬가지로 null인것을 확인하고 제어권이 thread1으로 넘어간다.
+ - thread1에서는 instance가 null 인것을 확인했으므로 new를 통해 instance를 생성한다.
+ - thread2에서도 instance가 null 인것을 확인했으므로 new를 통해 instance가 생성되고 결과적으로 instance가 2개가 생성이 된다.
+ 
+해결방법
+------------------------------
+1. 정적 변수에 instance를 바로 만들어 초기화 하는 방법
+
+~~~
+public class Printer {
+   // static 변수에 외부에 제공할 자기 자신의 인스턴스를 만들어 초기화
+   private static Printer printer = new Printer();
+   private Printer() { }
+   // 자기 자신의 인스턴스를 외부에 제공
+   public static Printer getPrinter(){
+     return printer;
+   }
+   public void print(String str) {
+     System.out.println(str);
+   }
+}
+
+~~~
+
+2. instance를 만드는 메서드를 동기화하는 방법
+
+~~~
+public class Printer {
+   // 외부에 제공할 자기 자신의 인스턴스
+   private static Printer printer = null;
+   private int counter = 0;
+   private Printer() { }
+   // 인스턴스를 만드는 메서드 동기화 (임계 구역)
+   public synchronized static Printer getPrinter(){
+     if (printer == null) {
+       printer = new Printer(); // Printer 인스턴스 생성
+     }
+     return printer;
+   }
+   public void print(String str) {
+     // 오직 하나의 스레드만 접근을 허용함 (임계 구역)
+     // 성능을 위해 필요한 부분만을 임계 구역으로 설정한다.
+     synchronized(this) {
+       counter++;
+       System.out.println(str + counter);
+     }
+   }
+}
+
+~~~
 
 
 
