@@ -15,3 +15,44 @@
   - ConcreteClass
     + 물려받은 primitive 메서드 또는 hook 메서드를 구현하는 클래스
     + 부분적으로 다른 부분을 구현한다
+
+
+예시
+-----------------------
+다음과 같이 JDBC를 사용하여 users라는 table 안의 데이터를 지우는 코드가 있다고 하자.
+
+
+~~~
+	Connection c = null;
+		PreparedStatement ps =null;
+		try {
+			c = dataSource.getConnection();
+		  
+      
+      //변하는 부분
+			ps = c.prepareStatement("delete from users");
+			
+      
+      ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw e;
+		}
+		finally {
+			if(ps!=null) {try {
+				ps.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				throw e2;
+				} 
+			}
+			if(c!=null) {try {
+				c.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				throw e2;
+				}
+			}
+		}
+~~~
+
