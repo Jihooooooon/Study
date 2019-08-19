@@ -23,7 +23,7 @@
 --------------------------------------
  ![고양이 만들기](../img/cat.PNG)
  
- '''
+ ~~~
 	public abstract class Cat{
 		private String name;
 		public Cat(String name) {
@@ -63,4 +63,4 @@
 	} 
 
 
- '''
+~~~
