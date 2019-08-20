@@ -15,6 +15,8 @@ Optional는 “존재할 수도 있지만 안 할 수도 있는 객체”, 즉, 
 
 예시
 -------------------------------------------
+
+주문을 하기 위한 정보가 저장되어 있는 다음과 같은 클래스들이 있다고 하자.
 ~~~
 /* 주문 */
 public class Order {
@@ -41,13 +43,61 @@ public class Address {
 }
 ~~~
 
+어떤 주문을 한 회원이 어느 도시에 살고 있는지 알아내기 위한 다음과 같은 메소드가 있다.
 
+~~~
+public String getCityOfMemberFromOrder(Order order) {
+	return order.getMember().getAddress().getCity();
+}
+~~~
 
+이 코드는 Null Point Exception(NPE)를 일으킬 소지가 다분한 문제가 있는 코드다.
+* order가 null이면?
+* order.getMember() 이 null 이면?
+* order.getMember().getAddress() 가 null 이면?
 
+Java8 이전에는 개발자들은 이러한 NPE를 회피하기 위해 다음과 같은 코딩 스타일을 사용했다.
 
+~~~
+public String getCityOfMemberFromOrder(Order order) {
+	if (order != null) {
+		Member member = order.getMember();
+		if (member != null) {
+			Address address = member.getAddress();
+			if (address != null) {
+				String city = address.getCity();
+				if (city != null) {
+					return city;
+				}
+			}
+		}
+	}
+	return "Seoul"; // default
+}
+~~~
 
+~~~
+public String getCityOfMemberFromOrder(Order order) {
+	if (order == null) {
+		return "Seoul";
+	}
+	Member member = order.getMember();
+	if (member == null) {
+		return "Seoul";
+	}
+	Address address = member.getAddress();
+	if (address == null) {
+		return "Seoul";
+	}
+	String city = address.getCity();
+	if (city == null) {
+		return "Seoul";
+	}
+	return city;
+}
+~~~
 
-
+코드가 아주 난잡해지고 차후에 유지보수가 어려워진다. 이러한 문제점들 때문에 Java8에서 Optional이 등장하게 된다!
 
 
 
