@@ -54,6 +54,7 @@ operation
 watch
 -----------------------
 ![graph](./img/zoo4.PNG)
+
 Znode가 변경 시 trigger가 발생되 클라이언트는 이 변화를 알 수 있다.
 
 > https://likefree.tistory.com/23
