@@ -245,3 +245,5 @@ public Integer calMultiply(String filepath) throws IOException{
 		return fileReadTemplate(filepath, mulCallback);
 	}
 ~~~
+
+이처럼 공통적인 파일처리 코드가 템플릿으로 분리되고 순수하게 계산로직만 남아 있기 때문에 코드의 관심이 무엇인지 명확하게 알 수 있고 객체지향원칙에 충실함을 알 수 있다.
