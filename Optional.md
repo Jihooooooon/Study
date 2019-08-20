@@ -126,7 +126,14 @@ Optional 객체를 생성하는 방법에는 3가지 방법이 있다.
 
 **Optional 객체 접근**
 
-
+* get()
+	- 비어있는 Optional 객체에 대해서, NoSuchElementException을 던진다.
+* orElse(T other)
+	- 비어있는 Optional 객체에 대해서, 넘어온 인자를 반환한다.
+* orElseGet(Supplier<? extends T> other)
+	- 비어있는 Optional 객체에 대해서, 넘어온 함수형 인자를 통해 생성된 객체를 반환한다. 비어있을때만 호출되므로 성능상 이점이 있다.
+* orElseThrow(Supplier<? extends X> exceptionSupplier)
+	- 비어있는 Optional 객체에 대해서, 넘어온 함수형 인자를 통해 생성된 예외를 던진다.
 
 
 > https://www.daleseo.com/java8-optional-before/
