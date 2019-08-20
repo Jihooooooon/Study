@@ -47,7 +47,14 @@ ZooKeeper 데이터모델
 
 operation
 -------------------------
+![graph](./img/zoo3.PNG)
 
+주요 오퍼레이션으로는 create, delete, exists, getChilderen, getData, setData 등이 있다. 언어별 바인딩도 제공된다.
+
+watch
+-----------------------
+![graph](./img/zoo4.PNG)
+Znode가 변경 시 trigger가 발생되 클라이언트는 이 변화를 알 수 있다.
 
 > https://likefree.tistory.com/23
 > https://alnova2.tistory.com/1044
