@@ -225,4 +225,23 @@ public Integer calcSum(String filepath) throws IOException{
 	}
 ~~~
 
--------------------------------------------------
+빼기나, 곱하기, 나누기를 구현하고자 한다면 interface와 fileReadTemplate은 건드릴 필요 없이 doSomethingWithReader을 구현한 메소드만 만들면 된다.
+
+~~~
+public Integer calMultiply(String filepath) throws IOException{
+		BufferedReaderCallback mulCallback = new BufferedReaderCallback() {
+			
+			@Override
+			public Integer doSomethingWithReader(BufferedReader br) throws IOException {
+				// TODO Auto-generated method stub
+				Integer mul=1;
+				String line = null;
+				while((line=br.readLine())!=null) {
+					mul*=Integer.valueOf(line);
+				}
+				return mul;
+			}
+		};
+		return fileReadTemplate(filepath, mulCallback);
+	}
+~~~
