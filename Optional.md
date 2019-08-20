@@ -126,6 +126,8 @@ Optional 객체를 생성하는 방법에는 3가지 방법이 있다.
 
 **Optional 객체 접근**
 
+* isPresent()
+	- 객체존재 여부를 bool 타입으로 반환한다
 * get()
 	- 비어있는 Optional 객체에 대해서, NoSuchElementException을 던진다.
 * orElse(T other)
