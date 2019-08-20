@@ -168,3 +168,61 @@ public class Calculator {
 	}
 }
 ~~~
+이것을 템플릿/콜백 패턴으로 바꾸면
+
+1. 변화하는 코드를 정의할 인터페이스를 만든다
+
+~~~
+public interface BufferedReaderCallback{
+		Integer doSomethingWithReader(BufferedReader br) throws IOException;
+	}
+~~~
+2. 중복되는 코드를 모아 템플릿을 만든다.
+
+~~~
+	public Integer fileReadTemplate(String filepath, BufferedReaderCallback callback) throws IOException {
+		BufferedReader br=null;
+		try {
+			br = new BufferedReader(new FileReader(filepath));
+			int ret =callback.doSomethingWithReader(br);
+			return ret;
+		} catch (IOException e2) {
+			// TODO: handle exception
+			System.out.println(e2.getMessage());
+			throw e2;
+		}
+		finally {
+			if(br!=null) {
+				try {
+					br.close();
+				} catch (IOException e2) {
+					// TODO: handle exception
+				}
+			}
+		}
+	}
+~~~
+
+3. doSomethingWithReader을 구현한 calcSum 메소드를 만든다.
+
+~~~
+public Integer calcSum(String filepath) throws IOException{
+		BufferedReaderCallback sumCallback= new BufferedReaderCallback() {
+			
+			@Override
+			public Integer doSomethingWithReader(BufferedReader br) throws IOException {
+				// TODO Auto-generated method stub
+				Integer sum =0;
+				String line = null;
+				while((line=br.readLine())!=null) {
+					sum+=Integer.valueOf(line);
+				}
+				return sum;
+			}
+		};
+		return fileReadTemplate(filepath, sumCallback);
+		
+	}
+~~~
+
+-------------------------------------------------
