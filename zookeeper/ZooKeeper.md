@@ -24,7 +24,7 @@ ZooKeeper 구성
 주키퍼는 n개의 서버로 단일 주키퍼 클러스터를 구성하며 이를 서버 앙상블이라고 한다. 클라이언트는 앙상블에 속한 서버에 연결하여 서비스를
 사용할 수 있다.
 
-![server](./img/zoo2.PNG)
+![server](../img/zoo2.PNG)
 
 * zookeeper 서비스는 복수의 서버에 복제되며, 모든 서버는 데이터 카피본을 저장하고 있다.
 - 리더는 구동 시 zookeeper 내부 알고리즘에 의해 자동 선정된다.
@@ -36,7 +36,7 @@ ZooKeeper 데이터모델
 ----------------------------------
 주키퍼는 계층형 네임스페이스를 가지고 데이터를 저장한다. 데이터를 메모리상에 유지하여 높은 처리량과 낮은 지연률을 가능하게 하였다.
 
-![graph](./img/zoo1.PNG)
+![graph](../img/zoo1.PNG)
 
 위 그림과 같이 계층형 구조를 가지고 각 계층의 네임 스페이스를 znode라고 한다. znode는 1M 이하의 데이터를 가질 수 있으며 자식 노드를 가질 수 있다.
 
@@ -47,13 +47,13 @@ ZooKeeper 데이터모델
 
 operation
 -------------------------
-![graph](./img/zoo3.PNG)
+![graph](../img/zoo3.PNG)
 
 주요 오퍼레이션으로는 create, delete, exists, getChilderen, getData, setData 등이 있다. 언어별 바인딩도 제공된다.
 
 watch
 -----------------------
-![graph](./img/zoo4.PNG)
+![graph](../img/zoo4.PNG)
 
 Znode가 변경 시 trigger가 발생되 클라이언트는 이 변화를 알 수 있다.
 
