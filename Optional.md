@@ -124,7 +124,7 @@ Optional 객체를 생성하는 방법에는 3가지 방법이 있다.
 	- null인지 아닌지 확신할 수 없는 객체를 담고 있는 Optional 객체를 생성한다. null일 경우 Optional.empty()와 동일한 비어있는 객체를 얻어온다.
 	
 
-*Optional 객체 접근*
+**Optional 객체 접근**
 
 
 
