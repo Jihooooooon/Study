@@ -101,5 +101,32 @@ public String getCityOfMemberFromOrder(Order order) {
 
 
 
+Optional의 효과
+---------------------------
+* NPE를 유발할 수 있는 null을 직접 다루지 않아도 된다.
+* 명시적으로 해당 변수가 null일 수도 있다는 가능성을 표현할 수 있다.
+
+Optional의 기본 사용법
+-------------------------
+다음과 같이 선언을 한다
+~~~
+Optional<Order> maybeOrder; // Order 타입의 객체를 감쌀 수 있는 Optional 타입의 변수
+Optional<Member> optMember; // Member 타입의 객체를 감쌀 수 있는 Optional 타입의 변수
+Optional<Address> address; // Address 타입의 객체를 감쌀 수 있는 Optional 타입의 변수
+~~~
+
+Optional 객체를 생성하는 방법에는 3가지 방법이 있다.
+* Optional.empty()
+	- null을 담고 있는 비어있는 Optional 객체를 생성한다.
+* Optional.of(value)
+	- null이 아닌 객체를 담고 있는 Optional 객체를 생성한다. null이 넘어올 경우 NPE가 발생하므로 주의해야한다.
+* Optional.ofNullable(value)
+	- null인지 아닌지 확신할 수 없는 객체를 담고 있는 Optional 객체를 생성한다. null일 경우 Optional.empty()와 동일한 비어있는 객체를 얻어온다.
+	
+
+*Optional 객체 접근*
+
+
+
 
 > https://www.daleseo.com/java8-optional-before/
