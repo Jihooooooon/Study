@@ -137,3 +137,34 @@ public class UserDaoDeleteAll extends UserDao{
 
 예시
 --------------------------------------------------
+파일을 열어서 모든 라인의 숫자를 더한 합을 구해주는 계산기를 구현해보자
+
+~~~
+public class Calculator {
+
+	public Integer calcSum(String filepath) throws IOException{
+		BufferedReader br=null;
+		try{
+			br = new BufferedReader(new FileReader(filepath));
+			Integer sum =0;
+			String line = null;
+			while((line=br.readLine())!=null) {
+				sum+=Integer.valueOf(line);
+			}
+			
+			br.close();
+			return sum;
+		}
+		catch(IOException e){
+			throw e;
+		}
+		finally{
+		if(br!=null){
+		try{br.close();}
+		catch(IOException e){}
+		}
+		}
+		
+	}
+}
+~~~
