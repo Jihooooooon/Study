@@ -11,3 +11,45 @@ Optional는 “존재할 수도 있지만 안 할 수도 있는 객체”, 즉, 
 타입을 가지고 있었다. 
 * 그리고 이 타입은 존재할지 안할지 모르는 값을 제어할 수 있는 여러가지 api를 제공하기 때문에 개발자들은 해당 api를 통해 간접적으로 그 값에 접근하게 된다.
 * 이에 Java8에서는 함수형 언어의 접근 방식을 따와 java.util.Optional<T>라는 새로운 클래스를 도입하게 된다.
+
+
+예시
+-------------------------------------------
+~~~
+/* 주문 */
+public class Order {
+	private Long id;
+	private Date date;
+	private Member member;
+	// getters & setters
+}
+
+/* 회원 */
+public class Member {
+	private Long id;
+	private String name;
+	private Address address;
+	// getters & setters
+}
+
+/* 주소 */
+public class Address {
+	private String street;
+	private String city;
+	private String zipcode;
+	// getters & setters
+}
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+> https://www.daleseo.com/java8-optional-before/
