@@ -46,5 +46,9 @@ ZooKeeper 데이터모델
 * Ephemeral Nodes(임시 노드): 세션이 유지되는 동안 활성(세션이 종류되면 삭제됨), 자식 노드를 가질 수 없음
 * Sequence Nodes(순차 노드): 경로의 끝에 일정하게 증가하는 카운터가 추가됨, 영구 및 임시 노드 모두에 적용 가능
 
+operation
+-------------------------
+
+
 > https://likefree.tistory.com/23
 > https://alnova2.tistory.com/1044
