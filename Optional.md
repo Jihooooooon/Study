@@ -13,7 +13,7 @@ Optional는 “존재할 수도 있지만 안 할 수도 있는 객체”, 즉, 
 * 이에 Java8에서는 함수형 언어의 접근 방식을 따와 java.util.Optional<T>라는 새로운 클래스를 도입하게 된다.
 
 
-예시
+NPE 방어 예시
 -------------------------------------------
 
 주문을 하기 위한 정보가 저장되어 있는 다음과 같은 클래스들이 있다고 하자.
@@ -138,4 +138,20 @@ Optional 객체를 생성하는 방법에는 3가지 방법이 있다.
 	- 비어있는 Optional 객체에 대해서, 넘어온 함수형 인자를 통해 생성된 예외를 던진다.
 
 
+Optional 사용 예시
+--------------------------------
+위 NPE 방어 예시의 복잡한 코드를 Optional을 사용하여서 리팩토링한 코드이다. stream api 사용법과 유사하다.
+
+~~~
+/* 주문을 한 회원이 살고 있는 도시를 반환한다 */
+public String getCityOfMemberFromOrder(Order order) {
+	return Optional.ofNullable(order)
+			.map(Order::getMember)
+			.map(Member::getAddress)
+			.map(Address::getCity)
+			.orElse("Seoul");
+}
+~~~
+
+이처럼 optional을 사용하면 직관적이고 깔끔한 코드를 만들 수 있다!
 > https://www.daleseo.com/java8-optional-before/
